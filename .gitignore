@@ -1,2 +1,9 @@
 # Virtual Environment
 venv/
+
+__pycache__/
+*.py[cod]
+*.log
+
+# PyCharm 
+.idea/

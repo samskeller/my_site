@@ -1,7 +1,16 @@
-h1 {
-    font-family: 'Helvetica';
-    font-size: 24px;
+h1.name-header {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 45px;
     font-style: normal;
     font-variant: normal;
     font-weight: 500;
+    text-align:center;
+    margin-top:50px;
+}
+
+.nav-link, .nav-link a {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
 }

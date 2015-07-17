@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sam Keller</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static "my_site/my_site.css" %}"/>
+    </head>
+
+    <body>
+        <h1 class="name-header">Sam Keller</h1>
+        <div class="nav-link">
+            <a href="/about">About Me</a>
+        </div>
+        {% block content %}{% endblock content %}
+    </body>
+</html>

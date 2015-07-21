@@ -4,7 +4,9 @@
 <div class="blog-wrapper">
     {% for post in posts %}
     <div class="post-title">{{post.title}}</div>
+    <div class="post-date">{{post.date_created|date:'Y-m-d H:i'}}</div>
     <div class="post-body">{{post.text}}</div>
+    <div class="post-body-footer"></div>
     {% endfor %}
 </div>
 

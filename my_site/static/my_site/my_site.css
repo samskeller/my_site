@@ -59,6 +59,10 @@ h1.name-header a {
     font-size: 40px;
 }
 
+.post-title a{
+    text-decoration: none;
+}
+
 .post-date {
 
 }
@@ -92,6 +96,11 @@ h1.name-header a {
     font-size: 22px;
     display: inline-block;
     max-width: 550px;
+}
+
+.blog-list-post-title a{
+    text-decoration: none;
+    color: rgb(0, 0, 200);
 }
 
 .blog-list-post-date {

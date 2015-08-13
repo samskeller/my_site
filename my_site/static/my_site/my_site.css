@@ -49,6 +49,7 @@ h1.name-header a {
     font-size: 18px;
 }
 
+/* Styling for Home Page Blog Posts */
 .blog-wrapper {
     margin-top: 55px;
 }
@@ -73,4 +74,28 @@ h1.name-header a {
     margin: 0 auto;
     border-bottom: 1px solid rgb(75, 75, 75);
     margin-top: 20px;
+}
+
+/* Styling for Blog Article List */
+.blog-list-wrapper {
+    margin-top: 55px;
+}
+.blog-list-header {
+    font-size: 35px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    margin-top:20px;
+}
+
+.blog-list-post-title {
+    font-size: 22px;
+    display: inline-block;
+    max-width: 550px;
+}
+
+.blog-list-post-date {
+    font-size: 18px;
+    display: inline-block;
+    float: right;
 }

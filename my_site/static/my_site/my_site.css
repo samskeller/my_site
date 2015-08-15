@@ -108,3 +108,39 @@ h1.name-header a {
     display: inline-block;
     float: right;
 }
+
+/* Styling for Links List */
+.link-list-wrapper {
+    margin-top: 55px;
+}
+
+.link-list-header {
+    font-size: 35px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    margin-top:20px;
+}
+
+.link-title {
+    padding-left: 20px;
+    font-size: 52px;
+    display: inline-block;
+    max-width: 550px;
+}
+
+.link-title a{
+    text-decoration: none;
+    color: rgb(0, 0, 200);
+}
+
+.link-url {
+    display: inline-block;
+    padding-left: 30px;
+    bottom-top: 20px;
+}
+
+.link-url a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}

@@ -16,12 +16,13 @@
             <div class="nav-link">
                 <a href="{{ blog_url }}">Blog</a>
             </div>
-            {% url 'about' as about_url %}
+            {% url 'person_details:about' as about_url %}
             <div class="nav-link">
                 <a href="{{ about_url }}">About Me</a>
             </div>
+            {% url 'person_details:link_list' as links_url %}
             <div class="nav-link">
-                <a href="{{ home_url }}">Links</a>
+                <a href="{{ links_url }}">Links</a>
             </div>
         </div>
         {% block content %}{% endblock content %}

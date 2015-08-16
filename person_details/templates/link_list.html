@@ -4,11 +4,13 @@
 <h1 class="link-list-header">Links</h1>
 <div class="link-list-wrapper">
     {% for link in links %}
-    <div class="link-title">
-        <a href="{{ link.url }}">{{ link.title }}</a>
-    </div>
-    <div class="link-url">
-        <a href="{{ link.url }}">( {{ link.url }} )</a>
+    <div class="link-wrapper">
+        <div class="link-title">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+        </div>
+        <div class="link-url">
+            <a href="{{ link.url }}">( {{ link.url }} )</a>
+        </div>
     </div>
     {% endfor %}
 </div>

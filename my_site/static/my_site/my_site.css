@@ -124,7 +124,7 @@ h1.name-header a {
 
 .link-title {
     padding-left: 20px;
-    font-size: 52px;
+    font-size: 45px;
     display: inline-block;
     max-width: 550px;
 }
@@ -137,6 +137,7 @@ h1.name-header a {
 .link-url {
     display: inline-block;
     padding-left: 30px;
+    padding-bottom: 40px;
     bottom-top: 20px;
 }
 

@@ -8,6 +8,16 @@ class Link(BaseModel):
     title = models.CharField(max_length=30)
     icon = models.ImageField(upload_to='link_icons/', blank=True, null=True)
 
+    def save(self, *args, **kwargs):
+        # Make sure the link starts with 'http://' so it's a valid external link
+        try:
+            if self.url.index('http://') != 0:
+                self.url = 'http://' + self.url
+        except ValueError:
+            self.url = 'http://' + self.url
+
+        return super(Link, self).save(*args, **kwargs)
+
     def __str__(self):
         return '{} Link'.format(title)
 

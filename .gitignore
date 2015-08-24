@@ -1,6 +1,12 @@
 # Virtual Environment
 venv/
 
+# Static files (local)
+public/
+
+# Local file to determine which kind of server
+local.py
+
 __pycache__/
 *.py[cod]
 *.log

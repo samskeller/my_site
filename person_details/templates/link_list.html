@@ -5,6 +5,9 @@
 <div class="link-list-wrapper">
     {% for link in links %}
     <div class="link-wrapper">
+        {% if link.icon %}
+        <img src="{{ link.icon.url }}", width="64", height="64">
+        {% endif %}
         <div class="link-title">
             <a href="{{ link.url }}">{{ link.title }}</a>
         </div>

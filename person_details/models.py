@@ -19,7 +19,7 @@ class Link(BaseModel):
         return super(Link, self).save(*args, **kwargs)
 
     def __str__(self):
-        return '{} Link'.format(title)
+        return '{} Link'.format(self.title)
 
     class Meta:
         verbose_name = 'Link'

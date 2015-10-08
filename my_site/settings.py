@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'common',
     'blog',
     'person_details',
+    'resume',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if jobs.exists %}
+    <h1>Work Experience</h1>
+    {% for job in jobs %}
+    {% if job.employer_link %}
+    <a href="{{ job.employer_link }}">
+        <div class="job_employer">{{ job.employer }}</div>
+    </a>
+    <div class="job_location">{{ job.location }}</div>
+    {% else %}
+    <div class="job_employer">{{ job.employer }}</div><div class="job_location">{{ job.location }}</div>
+    {% endif %}
+    <div class="job_title">{{ job.title }}</div>
+    {% if job.date_ended %}
+    <div class="job_dates">{{ job.date_started|date:'F Y' }} - {{ job.date_ended|date:'F Y' }}</div>
+    {% else %}
+    <div class="job_dates">{{ job.date_started|date:'F Y' }} - Present</div>
+    {% endif %}
+    
+    {% if job.responsibilities.exists %}
+    <ul class="job_responsibility_list">
+    {% for responsibility in job.responsibilities.all %}
+    <li class="job_responsibility">{{ responsibility.text }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% endfor %}
+{% endif %}
+
+{% if schools.exists %}
+    <h1>Schools</h1>
+    {% for school in schools %}
+    <div class="school_name">{{ school.name }}</div>
+    <div class="school_location">{{ school.location }}</div>
+    <div class="school_degree">{{ school.degree }}</div>
+    {% if school.date_ended %}
+    <div class="school_dates">{{ school.date_started|date:'F Y' }} - {{ school.date_ended|date:'F Y' }}</div>
+    {% else %}
+    <div class="school_dates">{{ school.date_started|date:'F Y' }} - Present</div>
+    {% endif %}
+    {% if school.details.exists %}
+    <ul class="school_details_list">
+        {% for school_detail in school.details.all %}
+        <li class="school_detail">
+            <div class="school_detail_key">{{ school_detail.key }}:</div>
+            <div class="school_detail_value">{{ school_detail.value }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

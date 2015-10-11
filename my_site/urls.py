@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^about/', include('person_details.urls', namespace="person_details")),
     url(r'^blog/', include('blog.urls', namespace="blog")),
+    url(r'^resume/', include('resume.urls', namespace="resume")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

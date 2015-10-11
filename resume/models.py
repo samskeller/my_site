@@ -10,7 +10,7 @@ class Job(BaseModel):
     employer = models.CharField(max_length=100)
     employer_link = models.URLField(max_length=200)
     date_started = models.DateTimeField()
-    date_ended = models.DateTimeField()
+    date_ended = models.DateTimeField(null=True, blank=True)
     location = models.CharField(max_length=100)
 
     def __str__(self):
@@ -63,7 +63,7 @@ class School(BaseModel):
     location = models.CharField(max_length=100)
     degree = models.CharField(max_length=200)
     date_started = models.DateTimeField()
-    date_ended = models.DateTimeField()
+    date_ended = models.DateTimeField(null=True, blank=True)
 
     def __str__(self, *args, **kwargs):
         return 'School: {}'.format(self.name)

@@ -31,6 +31,18 @@
     {% endfor %}
 {% endif %}
 
+{% if resume_links.exists %}
+    <h1>Links</h1>
+    <ul class="resume_links_list">
+        {% for resume_link in resume_links %}
+        <li class="resume_link_item">
+            <div class="resume_link_title">{{ resume_link.title }}:</div>
+            <a class="resume_link_url" href="{{ resume_link.url }}">{{ resume_link.url }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 {% if schools.exists %}
     <h1>Schools</h1>
     {% for school in schools %}

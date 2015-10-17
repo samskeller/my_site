@@ -2,6 +2,8 @@ from django.db import models
 
 from common.models import BaseModel
 
+from common.tools import clean_url
+
 
 class Link(BaseModel):
     url = models.URLField()
@@ -9,13 +11,7 @@ class Link(BaseModel):
     icon = models.ImageField(upload_to='link_icons/', blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        # Make sure the link starts with 'http://' so it's a valid external link
-        try:
-            if self.url.index('http://') != 0:
-                self.url = 'http://' + self.url
-        except ValueError:
-            self.url = 'http://' + self.url
-
+        self.url = clean_url(self.url)
         return super(Link, self).save(*args, **kwargs)
 
     def __str__(self):

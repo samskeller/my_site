@@ -2,6 +2,9 @@ from django.db import models
 
 from common.models import BaseModel
 
+from common.tools import clean_url
+
+
 class Job(BaseModel):
     '''
     Model for storing information on a position held at an organization.

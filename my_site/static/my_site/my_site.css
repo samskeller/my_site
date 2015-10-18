@@ -145,3 +145,107 @@ h1.name-header a {
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
+
+/* Styling for Resume */
+.resume_header_first, .resume_header {
+    text-align: center;
+    float: center;
+    font-size: 25px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+.resume_header_first {
+    padding-top: 50px;
+}
+
+.resume_header {
+    border-top: 1px solid #777777;
+    padding-top: 30px;
+}
+
+.job_employer_link {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.job_employer {
+    font-size: 20px;
+    font-weight: 500px;
+}
+
+.job_location {
+    display: inline;
+    padding-left: 10px;
+}
+
+.job_dates {
+    display: inline;
+    float: right;
+}
+
+.job_title {
+    margin-top: 5px;
+}
+
+.job_responsibility {
+    margin-top: 5px;
+}
+
+.resume_links_list {
+    padding-left: 15px;
+}
+
+.resume_link_item {
+    margin-top: 5px;
+}
+
+.resume_link_title {
+    display: inline;
+}
+
+.resume_link_url {
+    text-decoration: none;
+    display: inline;
+    margin-left: 10px;
+}
+
+.school_name {
+    display: inline;
+    font-size: 20px;
+}
+
+.school_location {
+    padding-left: 10px;
+    display: inline;
+}
+
+.school_dates {
+    float: right;
+    display: inline;
+}
+
+.school_degree {
+    margin-top: 5px;
+}
+
+.school_detail {
+    margin-top: 5px;
+    list-style-type: disc;
+    list-style-position: inside;
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+.school_detail_key {
+    display: inline;
+}
+
+.school_detail_value {
+    display: inline;
+    padding-left: 10px;
+}

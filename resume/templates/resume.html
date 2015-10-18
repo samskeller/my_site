@@ -3,22 +3,20 @@
 {% block content %}
 
 {% if jobs.exists %}
-    <h1>Work Experience</h1>
+    <h1 class="resume_header_first">Work Experience</h1>
     {% for job in jobs %}
     {% if job.employer_link %}
-    <a href="{{ job.employer_link }}">
-        <div class="job_employer">{{ job.employer }}</div>
-    </a>
-    <div class="job_location">{{ job.location }}</div>
+    <a class="job_employer_link" href="{{ job.employer_link }}">{{ job.employer }}</a>
     {% else %}
-    <div class="job_employer">{{ job.employer }}</div><div class="job_location">{{ job.location }}</div>
+    <div class="job_employer">{{ job.employer }}</div>
     {% endif %}
-    <div class="job_title">{{ job.title }}</div>
+    <div class="job_location">{{ job.location }}</div>
     {% if job.date_ended %}
     <div class="job_dates">{{ job.date_started|date:'F Y' }} - {{ job.date_ended|date:'F Y' }}</div>
     {% else %}
     <div class="job_dates">{{ job.date_started|date:'F Y' }} - Present</div>
     {% endif %}
+    <div class="job_title"><b>{{ job.title }}</b></div>
     
     {% if job.responsibilities.exists %}
     <ul class="job_responsibility_list">
@@ -32,33 +30,33 @@
 {% endif %}
 
 {% if resume_links.exists %}
-    <h1>Links</h1>
+    <h1 class="resume_header">Links</h1>
     <ul class="resume_links_list">
         {% for resume_link in resume_links %}
         <li class="resume_link_item">
-            <div class="resume_link_title">{{ resume_link.title }}:</div>
-            <a class="resume_link_url" href="{{ resume_link.url }}">{{ resume_link.url }}</a>
+        <div class="resume_link_title"><b>{{ resume_link.title }}</b>:</div>
+        <a class="resume_link_url" href="{{ resume_link.url }}">{{ resume_link.url }}</a>
         </li>
         {% endfor %}
     </ul>
 {% endif %}
 
 {% if schools.exists %}
-    <h1>Schools</h1>
+    <h1 class="resume_header">Schools</h1>
     {% for school in schools %}
-    <div class="school_name">{{ school.name }}</div>
+    <div class="school_name"><b>{{ school.name }}</b></div>
     <div class="school_location">{{ school.location }}</div>
-    <div class="school_degree">{{ school.degree }}</div>
     {% if school.date_ended %}
     <div class="school_dates">{{ school.date_started|date:'F Y' }} - {{ school.date_ended|date:'F Y' }}</div>
     {% else %}
     <div class="school_dates">{{ school.date_started|date:'F Y' }} - Present</div>
     {% endif %}
+    <div class="school_degree"><i>{{ school.degree }}</i></div>
     {% if school.details.exists %}
     <ul class="school_details_list">
         {% for school_detail in school.details.all %}
         <li class="school_detail">
-            <div class="school_detail_key">{{ school_detail.key }}:</div>
+        <div class="school_detail_key"><b>{{ school_detail.key }}</b>:</div>
             <div class="school_detail_value">{{ school_detail.value }}</div>
         </li>
         {% endfor %}

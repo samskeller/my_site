@@ -91,3 +91,34 @@ class SchoolDetail(BaseModel):
         verbose_name = 'School Detail'
         verbose_name_plural = 'School Details'
 
+
+class SkillType(BaseModel):
+    '''
+    Model for defining the types of skills that the person has so those skills can be 
+    grouped into sections
+    '''
+    name = models.CharField(max_length=64)
+
+    def __str__(self, *args, **kwargs):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Skill Type'
+        verbose_name_plural = 'Skill Types'
+
+
+class Skill(BaseModel):
+    '''
+    Model for listing the skills that a person have, grouped by their types
+    '''
+    skill_type = models.ForeignKey(SkillType, on_delete=models.PROTECT, related_name='skills')
+    key = models.CharField(max_length=64)
+    value = models.TextField()
+
+    def __str__(self, *args, **kwargs):
+        return self.key
+
+    class Meta:
+        verbose_name = 'Skill'
+        verbose_name_plural = 'Skills'
+

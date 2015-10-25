@@ -1,8 +1,41 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 body {
+    position: relative;
     max-width: 750px;
     margin: 0 auto !important;
     float: none !important;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    padding-bottom: 6rem;
+    min-height: 90%;
+}
+
+.footer {
+    min-height: 22px;
+    height: 22px;
+    padding-top: 10px;
+    line-height: 22px;
+    position: absolute;
+    padding: 1rem;
+    bottom: 0px;
+    margin-bottom: 0px;
+    width: 750px;
+    padding-left: 200px;
+    background-color: white;
+}
+
+.footer a{
+    font-weight: 500;
+    text-decoration: none;
 }
 
 h1.name-header {

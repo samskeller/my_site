@@ -282,3 +282,27 @@ h1.name-header a {
     display: inline;
     padding-left: 10px;
 }
+
+/* Styling for Skills */
+.skill_type {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 500px;
+}
+
+.skills_list {
+    padding-left: 15px;
+}
+
+.skill_list_item {
+    margin-top: 5px;
+}
+
+.skill_key{
+    display: inline;
+}
+
+.skill_value{
+    display: inline;
+    padding-left: 10px;
+}

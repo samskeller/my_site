@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import Q
+from django.core.exceptions import ValidationError
 
 from common.models import BaseModel
 
@@ -98,9 +100,15 @@ class SkillType(BaseModel):
     grouped into sections
     '''
     name = models.CharField(max_length=64)
+    order = models.IntegerField(default=0)
 
     def __str__(self, *args, **kwargs):
         return self.name
+
+    def save(*args, **kwargs):
+        if self.pk and SkillType.objects.filter(Q(order=self.order) & ~Q(pk=self.pk)).exists():
+            raise ValidationError("Order {} already in use".format(self.order))
+        return super(SkillType, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Skill Type'

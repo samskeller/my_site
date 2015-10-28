@@ -2,8 +2,27 @@
 
 {% block content %}
 
+{% if skill_types.exists %}
+    <h1 class="resume_header_first">Skills</h1>
+    {% for skill_type in skill_types %}
+    <div class="skill_type"><b>{{ skill_type.name }}</b></div>
+    
+    {% if skill_type.skills.exists %}
+    <ul class="skills_list">
+    {% for skill in skill_type.skills.all %}
+    <li class="skill_list_item">
+        <div class="skill_key"><b>{{ skill.key }}</b>:</div>
+            <div class="skill_value">{{ skill.value }}</div>
+    </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% endfor %}
+{% endif %}
+
 {% if jobs.exists %}
-    <h1 class="resume_header_first">Work Experience</h1>
+    <h1 class="resume_header">Work Experience</h1>
     {% for job in jobs %}
     {% if job.employer_link %}
     <a class="job_employer_link" href="{{ job.employer_link }}">{{ job.employer }}</a>

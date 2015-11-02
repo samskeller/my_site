@@ -5,7 +5,19 @@ from common.models import BaseModel
 from common.tools import clean_url
 
 
+class LinkType(BaseModel):
+    name = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Link Type'
+        verbose_name_plural = 'Link Types'
+
+
 class Link(BaseModel):
+    link_type = models.ForeignKey(LinkType, on_delete=models.PROTECT, related_name='links')
     url = models.URLField()
     title = models.CharField(max_length=30)
     icon = models.ImageField(upload_to='link_icons/', blank=True, null=True)

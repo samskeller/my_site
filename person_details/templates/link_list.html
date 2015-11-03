@@ -3,7 +3,9 @@
 {% block content %}
 <h1 class="link-list-header">Links</h1>
 <div class="link-list-wrapper">
-    {% for link in links %}
+    {% for link_type in link_types %}
+    <div class="link_type_title">{{ link_type.name }}</div>
+    {% for link in link_type.links.all %}
     <div class="link-wrapper">
         {% if link.icon %}
         <img src="{{ link.icon.url }}", width="64", height="64">
@@ -15,6 +17,7 @@
             <a href="{{ link.url }}">( {{ link.url }} )</a>
         </div>
     </div>
+    {% endfor %}
     {% endfor %}
 </div>
 {% endblock content %}

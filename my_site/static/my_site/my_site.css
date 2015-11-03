@@ -155,9 +155,14 @@ h1.name-header a {
     margin-top:20px;
 }
 
+.link_type_title {
+   font-size: 24px;
+   margin-bottom: 20px;
+}
+
 .link-title {
     padding-left: 20px;
-    font-size: 45px;
+    font-size: 18px;
     display: inline-block;
     max-width: 550px;
 }

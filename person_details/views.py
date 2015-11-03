@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
 
-from .models import Link
+from .models import LinkType
 
 class AboutMe(View):
     def get(self, request, *args, **kwargs):
@@ -10,5 +10,5 @@ class AboutMe(View):
 
 class LinkList(View):
     def get(self, request, *args, **kwargs):
-        links = Link.objects.all()
-        return render(request, 'link_list.html', {'links': links})
+        link_types = LinkType.objects.all()
+        return render(request, 'link_list.html', {'link_types': link_types})

@@ -105,7 +105,7 @@ class SkillType(BaseModel):
     def __str__(self, *args, **kwargs):
         return self.name
 
-    def save(*args, **kwargs):
+    def save(self, *args, **kwargs):
         if self.pk and SkillType.objects.filter(Q(order=self.order) & ~Q(pk=self.pk)).exists():
             raise ValidationError("Order {} already in use".format(self.order))
         return super(SkillType, self).save(*args, **kwargs)

@@ -6,9 +6,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
-with open('/etc/my_site/secret_key.txt') as f:
-    SECRET_KEY = f.read().strip()
-
 DEBUG = False
 
 ALLOWED_HOSTS = ['localhost:8001', '127.0.0.1:8001']
@@ -88,10 +85,3 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, "static"),
 )
-
-if SYSTEM_NAME == 'Sam_Dev':
-    STATIC_ROOT = os.path.join(PROJECT_DIR, "../public/static")
-    MEDIA_ROOT = os.path.join(PROJECT_DIR, "../public/media")
-elif SYSTEM_NAME == 'Live':
-    STATIC_ROOT = '/var/www/my_site/static'
-    MEDIA_ROOT = '/var/www/my_site/media'

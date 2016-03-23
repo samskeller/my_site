@@ -16,3 +16,6 @@ __pycache__/
 
 # Swap files
 *.swp
+
+# __init__.py files for settings module, which stores secrets
+my_site/settings/__init__.py

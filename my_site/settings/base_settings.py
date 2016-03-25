@@ -6,9 +6,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
+# False is a safer default for the DEBUG setting because of the memory issues when
+# DEBUG is True
 DEBUG = False
-
-ALLOWED_HOSTS = ['localhost:8001', '127.0.0.1:8001']
 
 INSTALLED_APPS = (
     'django.contrib.admin',

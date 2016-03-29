@@ -8,7 +8,9 @@
         <a href="{{ post_url }}">{{post.title}}</a>
     </div>
     <div class="post-date">{{post.date_created|date:'Y-m-d H:i'}}</div>
+    {% autoescape off %}
     <div class="post-body">{{post.text}}</div>
+    {% endautoescape %}
     <div class="post-body-footer"></div>
     {% endfor %}
 </div>

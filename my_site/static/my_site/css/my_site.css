@@ -311,3 +311,11 @@ h1.name-header a {
     display: inline;
     padding-left: 10px;
 }
+
+/* Styling for code blocks */
+
+/*pre {
+    white-space: pre-wrap;
+    background: #d2d6d8;
+}*/
+

@@ -3,10 +3,12 @@
     <head>
         <title>Sam Keller</title>
         {% load staticfiles %}
-        <link rel="stylesheet" href="{% static "my_site/my_site.css" %}"/>
+	<link rel="stylesheet" href="{% static "my_site/css/my_site.css" %}"/>
+	<link rel="stylesheet" href="{% static "my_site/css/prism.css" %}"/>
     </head>
 
     <body>
+	<script src="{% static "my_site/js/prism.js" %}"></script>
         {% url 'home' as home_url %}
         <h1 class="name-header">
             <a href="{{ home_url }}">Sam Keller</a>

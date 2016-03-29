@@ -74,7 +74,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-PROJECT_DIR = os.path.dirname(__file__)
+PROJECT_DIR = os.path.dirname(__file__) + "/.."
 
 STATIC_URL = '/static/'
 

@@ -1,4 +1,4 @@
-from my_site.base_settings import *
+from my_site.settings.base_settings import *
 
 
 ALLOWED_HOSTS = ['samskeller.me']

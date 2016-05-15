@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from blog.models import Post
+from blog.models import PostImage
 from blog.models import Comment
 
 class PostAdmin(admin.ModelAdmin):
@@ -8,6 +9,15 @@ class PostAdmin(admin.ModelAdmin):
 # text = models.TextField()
 # slug = models.SlugField(max_length=60)
     list_display = ('id', 'title', 'slug', 'date_created',)
+    list_selected_display = list_display
+    readonly_fields = ('date_created', 'date_last_modified',)
+
+
+class PostImageAdmin(admin.ModelAdmin):
+# image = models.ImageField()
+# post = models.ForeignKey(Post, on_delete=models.PROTECT, related_name='images')
+# reference = models.CharField(max_length=100)
+    list_display = ('id', 'post', 'reference', 'date_created',)
     list_selected_display = list_display
     readonly_fields = ('date_created', 'date_last_modified',)
 
@@ -21,5 +31,6 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(PostImage, PostImageAdmin)
 admin.site.register(Comment, CommentAdmin)
 

@@ -105,6 +105,10 @@ h1.name-header a {
     line-height: 150%;
 }
 
+.post-body img{
+    width: 100%;
+}
+
 .post-body-footer {
     height: 10px;
     width: 70%;

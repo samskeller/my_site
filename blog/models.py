@@ -7,6 +7,15 @@ class Post(BaseModel):
     title = models.CharField(max_length=100)
     text = models.TextField()
     slug = models.SlugField(max_length=60)
+    intro_length = models.IntegerField(default=0)
+
+    @property
+    def intro_text(self):
+        '''
+        A property we can access in templates to return the first part of the
+        post that we want to display when displaying a list of posts
+        '''
+        return self.text[:self.intro_length]
 
     def __str__(self):
         return 'Post {}: {}'.format(self.pk, self.title)

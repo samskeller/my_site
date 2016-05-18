@@ -9,7 +9,7 @@
     </div>
     <div class="post-date">{{post.date_created|date:'Y-m-d H:i'}}</div>
     {% autoescape off %}
-    <div class="post-body">{{post.text}}</div>
+    <div class="post-body">{{post.intro_text}} ...</div>
     {% endautoescape %}
     <div class="post-body-footer"></div>
     {% endfor %}

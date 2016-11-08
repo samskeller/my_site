@@ -7,7 +7,7 @@
     <div class="post-title">
         <a href="{{ post_url }}">{{post.title}}</a>
     </div>
-    <div class="post-date">{{post.date_created|date:'Y-m-d H:i'}}</div>
+    <div class="post-date">{{post.date_created|date:'b d, Y'}}</div>
     {% autoescape off %}
     <div class="post-body">{{post.intro_text}} ...</div>
     {% endautoescape %}

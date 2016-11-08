@@ -4,7 +4,7 @@
 
 <div class="blog-wrapper">
     <div class="post-title">{{ post.title }}</div>
-    <div class="post-date">{{ post.date_created|date:'Y-m-d H:i' }}</div>
+    <div class="post-date">{{ post.date_created|date:'b d, Y' }}</div>
 
     {% autoescape off %}
     <div class="post-body">{{ post_text }}</div>

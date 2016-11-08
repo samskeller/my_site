@@ -9,7 +9,7 @@
     <div class="blog-list-post-title">
         <a href="{{ post_url }}">{{ post.title }}</a>
     </div>
-    <div class="blog-list-post-date">{{post.date_created|date:'Y-m-d H:i'}}</div>
+    <div class="blog-list-post-date">{{post.date_created|date:'b d, Y'}}</div>
     {% endfor %}
 </div>
 

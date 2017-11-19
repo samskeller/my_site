@@ -129,6 +129,11 @@ h1.name-header a {
     margin-top:20px;
 }
 
+.blog-list-row {
+    display: block;
+    padding-bottom: 20px;
+}
+
 .blog-list-post-title {
     font-size: 22px;
     display: inline-block;

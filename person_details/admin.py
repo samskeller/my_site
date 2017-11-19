@@ -1,8 +1,9 @@
 from django.contrib import admin
 
-from person_details.models import LinkType
-from person_details.models import Link
-from person_details.models import LinkClick
+from .models import LinkType
+from .models import Link
+from .models import LinkClick
+from .models import PersonDetail
 
 
 class LinkTypeAdmin(admin.ModelAdmin):
@@ -27,6 +28,15 @@ class LinkClickAdmin(admin.ModelAdmin):
     list_selected_display = list_display
     readonly_fields = ('date_created', 'date_last_modified',)
 
+class PersonDetailAdmin(admin.ModelAdmin):
+# detail_type = models.CharField(max_length=40, unique=True)
+# detail_value = models.TextField()
+    list_display = ('id', 'detail_type', 'date_created',)
+    list_selected_display = list_display
+    readonly_field = ('date_created', 'date_last_modified',)
+
+
 admin.site.register(LinkType, LinkTypeAdmin)
 admin.site.register(Link, LinkAdmin)
 admin.site.register(LinkClick, LinkClickAdmin)
+admin.site.register(PersonDetail, PersonDetailAdmin)

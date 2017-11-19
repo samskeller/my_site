@@ -37,8 +37,19 @@ class LinkClick(BaseModel):
     link = models.ForeignKey(Link, on_delete=models.PROTECT)
 
     def __str__(self):
-        return 'Click on {} Link'.format(link)
+        return 'Click on {} Link'.format(self.link)
 
     class Meta:
         verbose_name = 'Link Click'
         verbose_name_plural = 'Link Clicks'
+
+class PersonDetail(BaseModel):
+    detail_type = models.CharField(max_length=40, unique=True)
+    detail_value = models.TextField()
+
+    def __str__(self):
+        return '{} Person Detail'.format(self.detail_type)
+
+    class Meta:
+        verbose_name = 'Person Detail'
+        verbose_name_plural = 'Person Details'

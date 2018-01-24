@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.core.exceptions import MultipleObjectsReturned
 from django.contrib.staticfiles.templatetags.staticfiles import static
@@ -25,6 +25,9 @@ class BlogPost(View):
         except Post.DoesNotExist:
             posts = Post.objects.all().order_by('-date_created')[:20]
             return render(request, 'blog_list.html', {'posts': posts})
+
+        if post.external_url:
+            return redirect(post.external_url)
 
         post_text = post.text
 

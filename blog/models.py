@@ -8,6 +8,7 @@ class Post(BaseModel):
     text = models.TextField()
     slug = models.SlugField(max_length=60)
     intro_length = models.IntegerField(default=0)
+    external_url = models.URLField(default='')
 
     @property
     def intro_text(self):

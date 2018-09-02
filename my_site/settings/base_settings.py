@@ -20,6 +20,7 @@ INSTALLED_APPS = (
     'blog',
     'person_details',
     'resume',
+    'highlights',
 )
 
 MIDDLEWARE = (
@@ -82,3 +83,5 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, "static"),
 )
+
+GOOGLE_BOOKS_URL_BASE = 'https://www.googleapis.com/books/v1/volumes'

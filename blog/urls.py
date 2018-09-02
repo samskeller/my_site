@@ -1,9 +1,10 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 
 from blog.views import BlogHome
 from blog.views import BlogPost
 
+app_name = 'blog'
 urlpatterns = [
-    url(r'^$', BlogHome.as_view(), name="blog_list"),
-    url(r'posts/(?P<slug>[\w-]+)/$', BlogPost.as_view(), name='blog_post'),
+    path(r'', BlogHome.as_view(), name="blog_list"),
+    path(r'posts/<slug:title>', BlogPost.as_view(), name='blog_post'),
 ]

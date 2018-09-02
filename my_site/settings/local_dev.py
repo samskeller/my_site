@@ -1,7 +1,7 @@
 from my_site.settings.base_settings import *
 
 
-ALLOWED_HOSTS = ['localhost:8001']
+ALLOWED_HOSTS = ['localhost']
 
 DEBUG = True
 

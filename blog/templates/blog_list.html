@@ -5,7 +5,7 @@
 <h1 class="blog-list-header">Blog Posts</h1>
 <div class="blog-list-wrapper">
     {% for post in posts %}
-    {% url 'blog:blog_post' slug=post.slug as post_url %} 
+    {% url 'blog:blog_post' title=post.slug as post_url %} 
     <div class="blog-list-row">
       <div class="blog-list-post-title">
           <a href="{{ post_url }}">{{ post.title }}</a>

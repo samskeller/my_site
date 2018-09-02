@@ -3,7 +3,7 @@
 {% block content %}
 <div class="blog-wrapper">
     {% for post in posts %}
-    {% url 'blog:blog_post' slug=post.slug as post_url %}
+    {% url 'blog:blog_post' title=post.slug as post_url %}
     <div class="post-title">
         <a href="{{ post_url }}">{{post.title}}</a>
     </div>

@@ -15,7 +15,7 @@ class BlogHome(View):
 
 class BlogPost(View):
     def get(self, request, *args, **kwargs):
-        slug = kwargs.pop('slug', None)
+        slug = kwargs.pop('title', None)
         if not id:
             posts = Post.objects.all().order_by('-date_created')[:20]
             return render(request, 'blog_list.html', {'posts': posts})

@@ -1,7 +1,8 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 
 from resume.views import ResumeView
 
+app_name = 'resume'
 urlpatterns = [
-    url(r'^$', ResumeView.as_view(), name="resume"),
+    path(r'', ResumeView.as_view(), name="resume"),
 ]

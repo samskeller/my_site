@@ -6,8 +6,9 @@ from .utils import query_google_books
 class Book(BaseModel):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
-    google_books_id = models.CharField(max_length=100)
-    thumbnail_url = models.URLField()
+    subtitle = models.CharField(max_length=100, blank=True)
+    google_books_id = models.CharField(max_length=100, blank=True)
+    thumbnail_url = models.URLField(blank=True)
 
     def __str__(self):
         return '"{}" by {}'.format(self.title, self.author)
@@ -17,6 +18,7 @@ class Book(BaseModel):
             google_books_response = query_google_books(self.title, self.author)
             self.google_books_id = google_books_response['id']
             self.thumbnail_url = google_books_response['volumeInfo']['imageLinks']['thumbnail']
+            self.subtitle = google_books_response['volumeInfo']['subtitle']
 
         super(Book, self).save(*args, **kwargs)
 

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="blog-list-header">Highlights</h1>
+<div class="blog-list-wrapper">
+    {% for book in books %}
+    <div class="blog-list-row">
+      <div class="blog-list-post-title">
+          {{ book.title }}
+					{{ book.author }}
+      </div>
+      <div class="blog-list-post-date">{{book.date_created|date:'b d, Y'}}</div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+

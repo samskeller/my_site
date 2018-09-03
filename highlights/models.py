@@ -1,24 +1,29 @@
 from django.db import models
 
 from common.models import BaseModel
-from .utils import query_google_books
+from .utils import query_google_books, get_thumbnail
 
 class Book(BaseModel):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=100, blank=True)
     google_books_id = models.CharField(max_length=100, blank=True)
-    thumbnail_url = models.URLField(blank=True)
+    thumbnail = models.ImageField(blank=True)
 
     def __str__(self):
         return '"{}" by {}'.format(self.title, self.author)
 
     def save(self, *args, **kwargs):
         if not self.google_books_id:
+            # Query the Google Books API for the book
             google_books_response = query_google_books(self.title, self.author)
             self.google_books_id = google_books_response['id']
-            self.thumbnail_url = google_books_response['volumeInfo']['imageLinks']['thumbnail']
-            self.subtitle = google_books_response['volumeInfo']['subtitle']
+            if 'subtitle' in google_books_response['volumeInfo']:
+                self.subtitle = google_books_response['volumeInfo']['subtitle']
+
+            # Retrieve and save the thumbnail
+            [filename, file] = get_thumbnail(google_books_response)
+            self.thumbnail.save(filename, file)
 
         super(Book, self).save(*args, **kwargs)
 

@@ -328,3 +328,41 @@ h1.name-header a {
     background: #d2d6d8;
 }*/
 
+/* Styling for HIghlights */
+h1.books_list_header {
+    font-size: 35px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    margin-top:20px;
+}
+ul.bookshelf {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  list-style: none;
+}
+
+li.book {
+  padding: 0;
+  width: auto;
+  margin-bottom: 70px;
+}
+
+a.book_link {
+  text-decoration: none;  
+}
+
+.book_title {
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+}
+
+.book_author {
+  font-size: 16px;
+  padding-top: 10px;
+  color: rgb(70, 70, 70);
+  font-weight: 100;
+}

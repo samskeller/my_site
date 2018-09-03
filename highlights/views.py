@@ -12,3 +12,10 @@ class BooksHome(View):
     def get(self, request, *args, **kwargs):
         books = Book.objects.all().order_by('-date_created')[:20]
         return render(request, 'books.html', {'books': books})
+
+class BookHighlights(View):
+    def get(self, request, *args, **kwargs):
+        book_id = kwargs.pop('book_id', None)
+        book = Book.objects.get(id=book_id)
+        highlights = Highlight.objects.filter(book_id=book_id).order_by('date_created')
+        return render(request, 'highlights.html', {'highlights': highlights, 'book': book})

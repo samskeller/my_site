@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<img src="{{ book.thumbnail.url }}">
+<div class="book_title">
+  {{ book.title }}
+</div>
+<div class="book_author">
+	{{ book.author }}
+</div>
+<ul>
+    {% for highlight in highlights %}
+	<li>
+    {{ highlight.text}}
+	</li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
+

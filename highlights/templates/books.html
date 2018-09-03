@@ -2,18 +2,22 @@
 
 {% block content %}
 
-<h1 class="blog-list-header">Highlights</h1>
-<div class="blog-list-wrapper">
+<h1 class="books_list_header">What I'm reading</h1>
+<ul class="bookshelf">
     {% for book in books %}
-    <div class="blog-list-row">
-      <div class="blog-list-post-title">
-          {{ book.title }}
-					{{ book.author }}
-      </div>
-      <div class="blog-list-post-date">{{book.date_created|date:'b d, Y'}}</div>
-    </div>
-    {% endfor %}
-</div>
+	<li class="book">
+    <a class="book_link", href="https://www.google.com">
+			<img src="{{ book.thumbnail.url }}">
+			<div class="book_title">
+        {{ book.title }}
+			</div>
+			<div class="book_author">
+				{{ book.author }}
+			</div>
+    </a>
+	</li>
+  {% endfor %}
+</ul>
 
 {% endblock content %}
 

@@ -1,7 +1,7 @@
 from django.db import models
 
 from common.models import BaseModel
-from .utils import query_google_books, get_thumbnail
+from .google_books_utils import query_google_books, get_thumbnail
 
 class Book(BaseModel):
     title = models.CharField(max_length=100)
@@ -34,7 +34,6 @@ class Book(BaseModel):
 class Highlight(BaseModel):
     book = models.ForeignKey(Book, on_delete=models.PROTECT, related_name='highlights')
     text = models.TextField()
-    page_number = models.IntegerField()
 
     def __str__(self):
         return 'Highlight {} on Book {}'.format(self.pk, self.book.pk)

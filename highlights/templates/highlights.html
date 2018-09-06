@@ -2,20 +2,25 @@
 
 {% block content %}
 
-<img src="{{ book.thumbnail.url }}">
-<div class="book_title">
-  {{ book.title }}
+<div class="book_detail">
+    <img src="{{ book.thumbnail.url }}">
+    <div class="book_detail_title">
+      {{ book.title }}
+    </div>
+    <div class="book_detail_subtitle">
+        {{ book.subtitle }}
+    </div>
+    <div class="book_detail_author">
+    	{{ book.author }}
+    </div>
+    <ul class="highlights">
+        {% for highlight in highlights %}
+    	<li class="highlight">
+        {{ highlight.text}}
+    	</li>
+      {% endfor %}
+    </ul>
 </div>
-<div class="book_author">
-	{{ book.author }}
-</div>
-<ul>
-    {% for highlight in highlights %}
-	<li>
-    {{ highlight.text}}
-	</li>
-  {% endfor %}
-</ul>
 
 {% endblock content %}
 

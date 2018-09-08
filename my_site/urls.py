@@ -14,5 +14,5 @@ urlpatterns = [
     path(r'about/', include('person_details.urls', namespace="person_details")),
     path(r'blog/', include('blog.urls', namespace="blog")),
     path(r'resume/', include('resume.urls', namespace="resume")),
-    path(r'highlights/', include('highlights.urls', namespace="highlights")),
+    path(r'books/', include('highlights.urls', namespace="highlights")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

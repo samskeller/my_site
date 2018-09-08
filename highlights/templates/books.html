@@ -3,10 +3,12 @@
 {% block content %}
 
 <h1 class="books_list_header">What I'm reading</h1>
+<h3 class="books_list_description">Click a book to view the passages that I've highlighted. I always highlight when reading on my e-reader; I recently have also been trying to annotate in physical books and type up the passages</h3>
 <ul class="bookshelf">
     {% for book in books %}
+    {% url 'highlights:book_highlights' book_id=book.id as highlights_url %} 
 	<li class="book">
-    <a class="book_link", href="https://www.google.com">
+      <a class="book_link", href="{{ highlights_url }}">
 			<img src="{{ book.thumbnail.url }}">
 			<div class="book_title">
         {{ book.title }}

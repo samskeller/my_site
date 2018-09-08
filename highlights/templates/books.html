@@ -9,7 +9,7 @@
     {% url 'highlights:book_highlights' book_id=book.id as highlights_url %} 
 	<li class="book">
       <a class="book_link", href="{{ highlights_url }}">
-			<img src="{{ book.thumbnail.url }}">
+			<img height=193 width=128 src="{{ book.thumbnail.url }}">
 			<div class="book_title">
         {{ book.title }}
 			</div>

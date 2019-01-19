@@ -82,7 +82,7 @@ h1.name-header a {
     font-size: 18px;
 }
 
-/* Styling for Home Page Blog Posts */
+/* Styling for Blog Posts */
 .blog-wrapper {
     margin-top: 55px;
 }
@@ -107,14 +107,6 @@ h1.name-header a {
 
 .post-body img{
     width: 100%;
-}
-
-.post-body-footer {
-    height: 10px;
-    width: 70%;
-    margin: 0 auto;
-    border-bottom: 1px solid rgb(75, 75, 75);
-    margin-top: 20px;
 }
 
 /* Styling for Blog Article List */

@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import View
 
-from blog.models import Post
+from person_details.models import PersonDetail
 
 class Home(View):
     def get(self, request, *args, **kwargs):
-        posts = Post.objects.all().order_by('-date_created')[:5]
-        return render(request, 'index.html', {'posts': posts})
+        my_description = PersonDetail.objects.filter(detail_type='description').first()
+        return render(request, 'index.html', {'my_description': my_description})
 

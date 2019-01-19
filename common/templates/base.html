@@ -24,14 +24,6 @@
             <a href="{{ home_url }}">Sam Keller</a>
         </h1>
         <div class="nav-link-container">
-            {% url 'blog:blog_list' as blog_url %}
-            <div class="nav-link">
-                <a href="{{ blog_url }}">Blog</a>
-            </div>
-            {% url 'person_details:about' as about_url %}
-            <div class="nav-link">
-                <a href="{{ about_url }}">About Me</a>
-            </div>
             {% url 'resume:resume' as resume_url %}
             <div class="nav-link">
                 <a href="{{ resume_url }}">Resume</a>

@@ -1,18 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="blog-wrapper">
-    {% for post in posts %}
-    {% url 'blog:blog_post' title=post.slug as post_url %}
-    <div class="post-title">
-        <a href="{{ post_url }}">{{post.title}}</a>
-    </div>
-    <div class="post-date">{{post.date_created|date:'b d, Y'}}</div>
-    {% autoescape off %}
-    <div class="post-body">{{post.intro_text}} ...</div>
-    {% endautoescape %}
-    <div class="post-body-footer"></div>
-    {% endfor %}
+<div class="about-blurb">
+  {% autoescape off %}
+	{{ my_description.detail_value }}
+  {% endautoescape %}
 </div>
 
 {% endblock content %} 

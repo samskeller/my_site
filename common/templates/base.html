@@ -23,6 +23,15 @@
         <h1 class="name-header">
             <a href="{{ home_url }}">Sam Keller</a>
         </h1>
+				<div class="external-link-container">
+					{% for link in links %}
+          <div class="external-link">
+						<a href="{{ link.url }}" target="_blank"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 32 32">
+								<path fill="black" d="{{ link.svg }}"></path>
+						</svg></a>
+					</div>
+					{% endfor %}
+				</div>
         <div class="nav-link-container">
             {% url 'resume:resume' as resume_url %}
             <div class="nav-link">

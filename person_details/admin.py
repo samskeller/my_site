@@ -6,10 +6,10 @@ from .models import PersonDetail
 
 
 class LinkAdmin(admin.ModelAdmin):
-# url = models.URLField()
 # title = models.CharField(max_length=30)
-# icon = models.ImageField(upload_to='link_icons/', blank=True, null=True)
-    list_display = ('id', 'link_type', 'url', 'title', 'date_created',)
+# url = models.URLField()
+# svg = models.TextField()
+    list_display = ('id', 'title', 'url', 'date_created',)
     list_selected_display = list_display
     readonly_fields = ('date_created', 'date_last_modified',)
 

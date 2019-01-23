@@ -6,9 +6,9 @@ from common.tools import clean_url
 
 
 class Link(BaseModel):
-    url = models.URLField()
     title = models.CharField(max_length=30)
-    icon = models.ImageField(upload_to='link_icons/', blank=True, null=True)
+    url = models.URLField()
+    svg = models.TextField()
 
     def save(self, *args, **kwargs):
         self.url = clean_url(self.url)

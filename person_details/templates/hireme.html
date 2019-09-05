@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hire-me-blurb">
+  {% autoescape off %}
+	{{ hire_me.detail_value }}
+  {% endautoescape %}
+</div>
+{% endblock content %}
+

@@ -37,6 +37,10 @@
             <div class="nav-link">
                 <a href="{{ resume_url }}">Resume</a>
             </div>
+            {% url 'hire-me' as hireme_url%}
+            <div class="nav-link">
+                <a href="{{ hireme_url }}">Hire Me!</a>
+            </div>
             {% url 'highlights:books_list' as books_url %}
             <div class="nav-link">
                 <a href="{{ books_url }}">Reading</a>

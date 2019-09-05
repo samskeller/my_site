@@ -93,7 +93,7 @@ h1.name-header a {
     cursor: pointer;
 }
 
-.about-blurb {
+.about-blurb, .hire-me-blurb {
     margin-top: 75px;
     line-height: 150%;
     font-size: 18px;
